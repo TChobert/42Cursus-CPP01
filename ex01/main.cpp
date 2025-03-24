@@ -12,6 +12,11 @@
 
 #include "Zombie.hpp"
 
+static void	destroyHorde(int N, Zombie *horde)
+{
+	delete[]	horde;
+}
+
 int	main(void)
 {
 	Zombie	*Bernard;
@@ -20,5 +25,6 @@ int	main(void)
 	Bernard->announce();
 	randomChump("Didier");
 	delete	Bernard;
+	//call horde
 	return (EXIT_SUCCESS);
 }
