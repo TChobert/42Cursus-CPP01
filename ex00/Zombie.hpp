@@ -12,8 +12,10 @@
 
 #pragma once
 
+# include <cstdlib>
 # include <string>
 # include <iostream>
+# include <new>
 
 class Zombie
 {

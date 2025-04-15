@@ -16,9 +16,17 @@ int	main(void)
 {
 	Zombie	*Bernard;
 
-	Bernard = newZombie("Bernard");
-	Bernard->announce();
-	randomChump("Didier");
-	delete	Bernard;
+	try
+	{
+		Bernard = newZombie("Bernard");
+		Bernard->announce();
+		randomChump("Didier");
+		delete	Bernard;
+	}
+	catch(const std::bad_alloc &e)
+	{
+		std::cout << "Memory allocation failure" << e.what() << std::endl;
+		return (EXIT_FAILURE);
+	}
 	return (EXIT_SUCCESS);
 }
