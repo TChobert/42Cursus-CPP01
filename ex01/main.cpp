@@ -12,19 +12,19 @@
 
 #include "Zombie.hpp"
 
-static void	destroyHorde(int N, Zombie *horde)
-{
-	delete[]	horde;
-}
-
 int	main(void)
 {
 	Zombie	*Bernard;
+	Zombie	*Horde;
+	Zombie	*SecondHorde;
 
 	Bernard = newZombie("Bernard");
 	Bernard->announce();
 	randomChump("Didier");
 	delete	Bernard;
-	//call horde
+	Horde = zombieHorde(10, "Dominic");
+	destroyHorde(Horde);
+	SecondHorde = zombieHorde(5, "DOMINIQUE");
+	destroyHorde(SecondHorde);
 	return (EXIT_SUCCESS);
 }

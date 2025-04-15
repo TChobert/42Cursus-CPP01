@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   destroyHorde.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/21 19:46:00 by tchobert          #+#    #+#             */
-/*   Updated: 2025/03/21 19:46:02 by tchobert         ###   ########.fr       */
+/*   Created: 2025/04/15 20:02:26 by tchobert          #+#    #+#             */
+/*   Updated: 2025/04/15 20:02:35 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Zombie.hpp"
 
-# include <string>
-# include <iostream>
-# include <cstdlib>
-
-class Zombie
+void	destroyHorde(Zombie *horde)
 {
-	private:
-
-	std::string	_name;
-
-	public:
-
-	Zombie(const std::string& name);
-	Zombie(void);
-	~Zombie();
-	void	announce(void);
-	void	setName(std::string& name);
-};
-
-void	randomChump(std::string name);
-Zombie*	newZombie(std::string name);
-Zombie	*zombieHorde(int N, std::string name);
-void	destroyHorde(Zombie *horde);
+	delete[]	horde;
+}

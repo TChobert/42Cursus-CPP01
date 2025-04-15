@@ -15,13 +15,17 @@
 int	main(void)
 {
 	Zombie	*Bernard;
+	Zombie	*Louis;
 
 	try
 	{
 		Bernard = newZombie("Bernard");
 		Bernard->announce();
+		Louis = newZombie("Louis");
+		Louis->announce();
 		randomChump("Didier");
 		delete	Bernard;
+		delete	Louis;
 	}
 	catch(const std::bad_alloc &e)
 	{
