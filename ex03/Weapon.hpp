@@ -23,6 +23,7 @@ class Weapon
 
 	public:
 
-	const std::string&	get_type(void) const;
-	void				set_type(const std::string new_type);
+	Weapon(const std::string& type);
+	const std::string&	getType(void) const;
+	void				setType(const std::string new_type);
 };

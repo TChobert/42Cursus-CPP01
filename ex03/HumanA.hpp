@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#pragma once
+
+# include "Weapon.hpp"
 
 class HumanA
 {
 	private:
 
-	std::string	_name;
-	Weapon&		_weapon;
+	const std::string	_name;
+	Weapon&				_weapon;
 
 	public:
 

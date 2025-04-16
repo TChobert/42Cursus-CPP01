@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 14:45:35 by tchobert          #+#    #+#             */
-/*   Updated: 2025/04/16 14:45:46 by tchobert         ###   ########.fr       */
+/*   Created: 2025/04/16 15:43:43 by tchobert          #+#    #+#             */
+/*   Updated: 2025/04/16 15:44:02 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#pragma once
 
-Weapon::Weapon(const std::string& type): _type(type)
+# include "Weapon.hpp"
+
+class HumanB
 {
-}
+	private:
 
-const std::string&	Weapon::getType(void) const
-{
-	return (_type);
-}
+	const std::string	_name;
+	Weapon*				_weapon;
 
-void	Weapon::setType(const std::string new_type)
-{
-	_type = new_type;
-}
+	public:
 
-
-// Idee 1:
-//
-// HumanA prend une REFERENCE a l'arme
-//
-//
-//
-//HumanB prend un pointeur
-//
-//
+	HumanB(const std::string& name);
+	~HumanB(void);
+	void	attack(void) const;
+	void	setWeapon(Weapon& weapon);
+};

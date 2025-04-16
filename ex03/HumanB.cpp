@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 14:45:35 by tchobert          #+#    #+#             */
-/*   Updated: 2025/04/16 14:45:46 by tchobert         ###   ########.fr       */
+/*   Created: 2025/04/16 15:48:36 by tchobert          #+#    #+#             */
+/*   Updated: 2025/04/16 15:48:45 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-Weapon::Weapon(const std::string& type): _type(type)
+HumanB::HumanB(const std::string& name): _name(name)
 {
 }
 
-const std::string&	Weapon::getType(void) const
+HumanB::~HumanB(void)
 {
-	return (_type);
 }
 
-void	Weapon::setType(const std::string new_type)
+void	HumanB::attack(void) const
 {
-	_type = new_type;
+	if (_weapon != NULL)
+		std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
 }
 
-
-// Idee 1:
-//
-// HumanA prend une REFERENCE a l'arme
-//
-//
-//
-//HumanB prend un pointeur
-//
-//
+void	HumanB::setWeapon(Weapon& weapon)
+{
+	_weapon = &weapon;
+}
