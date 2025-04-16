@@ -25,14 +25,3 @@ void	Weapon::setType(const std::string new_type)
 {
 	_type = new_type;
 }
-
-
-// Idee 1:
-//
-// HumanA prend une REFERENCE a l'arme
-//
-//
-//
-//HumanB prend un pointeur
-//
-//
