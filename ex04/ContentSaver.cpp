@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContentReplacer.hpp                                :+:      :+:    :+:   */
+/*   ContentSaver.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 17:01:55 by tchobert          #+#    #+#             */
-/*   Updated: 2025/05/06 17:02:07 by tchobert         ###   ########.fr       */
+/*   Created: 2025/05/06 20:05:09 by tchobert          #+#    #+#             */
+/*   Updated: 2025/05/06 20:05:29 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ContentSaver.hpp"
 
-# include <string>
-# include <cstdlib>
-
-class	ContentReplacer
+void	ContentSaver::saveContent(const std::string& filename, const std::string& content)
 {
-	public:
+	std::ofstream	newFileStream;
 
-	std::string	replace(const std::string& content, const std::string& s1,
-			const std::string& s2);
-};
+	_filecreator.createFile(newFileStream, filename);
+	_contentwriter.writeContent(newFileStream, content);
+}

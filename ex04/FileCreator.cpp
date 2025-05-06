@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContentReplacer.hpp                                :+:      :+:    :+:   */
+/*   FileCreator.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 17:01:55 by tchobert          #+#    #+#             */
-/*   Updated: 2025/05/06 17:02:07 by tchobert         ###   ########.fr       */
+/*   Created: 2025/05/06 20:21:10 by tchobert          #+#    #+#             */
+/*   Updated: 2025/05/06 20:21:22 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "FileCreator.hpp"
 
-# include <string>
-# include <cstdlib>
-
-class	ContentReplacer
+void	FileCreator::createFile(std::ofstream& fileStream, const std::string& oldFilename)
 {
-	public:
+	const std::string	newFilename = oldFilename + ".replace";
 
-	std::string	replace(const std::string& content, const std::string& s1,
-			const std::string& s2);
-};
+	fileStream.open(newFilename.c_str());
+	if (!fileStream.is_open())
+	{
+		throw std::runtime_error("Cannot create file: " + newFilename);
+	}
+}

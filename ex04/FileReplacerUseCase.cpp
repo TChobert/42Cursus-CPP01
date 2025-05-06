@@ -12,15 +12,19 @@
 
 #include "FileReplacerUseCase.hpp"
 #include "FileReader.hpp"
+#include "ContentReplacer.hpp"
+#include "ContentSaver.hpp"
 
 void	FileReplacerUseCase::execute(const std::string& filename,
 			const std::string& s1, const std::string& s2)
 {
 	std::string	fileContent;
-	std::string	replacedContent;
+	std::string	newFileContent;
 
 	FileReader	filereader;
 	fileContent = filereader.readFile(filename);
-	//
-	//FileWriter
+	ContentReplacer	replacer;
+	newFileContent = replacer.replace(fileContent, s1, s2);
+	ContentSaver	contentsaver;
+	contentsaver.saveContent(filename, newFileContent);
 }

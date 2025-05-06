@@ -15,14 +15,17 @@
 std::string	ContentReplacer::replace(const std::string& content,
 				const std::string& s1, const std::string& s2)
 {
-	std::string	newContent;
-	size_t		position;
-	size_t		found;
+	std::string					newContent;
+	std::string::size_type		position;
+	std::string::size_type		found;
 
 	position = 0;
 	while ((found = content.find(s1, position)) != std::string::npos)
 	{
 		newContent.append(content.substr(position, found - position));
+		newContent.append(s2);
+		position = found + s1.length();
 	}
+	newContent.append(content.substr(position));
 	return (newContent);
 }
