@@ -19,6 +19,6 @@ std::string	FileReader::readFile(const std::string& filename)
 
 	_fileopener.openFile(openedFile, filename);
 	_contentgetter.getFileContent(openedFile, fileContent);
-	//close
+	_filecloser.closeFile(openedFile);
 	return (fileContent);
 }

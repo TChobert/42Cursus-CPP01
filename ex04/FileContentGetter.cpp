@@ -12,7 +12,7 @@
 
 #include "FileContentGetter.hpp"
 
-void	FileContentGetter::getFileContent(std::ifstream& openedFile, std::string content)
+void	FileContentGetter::getFileContent(std::ifstream& openedFile, std::string& content)
 {
 	std::ostringstream ss;
 

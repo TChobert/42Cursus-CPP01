@@ -23,5 +23,5 @@ class	FileContentGetter
 {
 	public:
 
-	void	getFileContent(std::ifstream& stream, std::string content);
+	void	getFileContent(std::ifstream& stream, std::string& content);
 };

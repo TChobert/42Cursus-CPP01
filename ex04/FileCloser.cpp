@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FileOpener.hpp                                     :+:      :+:    :+:   */
+/*   FileCloser.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 13:48:36 by tchobert          #+#    #+#             */
-/*   Updated: 2025/05/06 13:48:52 by tchobert         ###   ########.fr       */
+/*   Created: 2025/05/06 15:59:26 by tchobert          #+#    #+#             */
+/*   Updated: 2025/05/06 15:59:43 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "FileCloser.hpp"
 
-# include <string>
-# include <iostream>
-# include <cstdlib>
-# include <fstream>
-# include <sstream>
-# include "FileOpener.hpp"
-# include "FileContentGetter.hpp"
-# include "FileCloser.hpp"
-
-class FileReader
+void	FileCloser::closeFile(std::ifstream &openedFile)
 {
-	private:
-
-	FileOpener			_fileopener;
-	FileContentGetter	_contentgetter;
-	FileCloser			_filecloser;
-
-	public:
-
-	std::string	readFile(const std::string& filename);
-};
+	openedFile.close();
+}
