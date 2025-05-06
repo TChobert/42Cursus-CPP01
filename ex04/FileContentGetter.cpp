@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FileReplacerUseCase.hpp                            :+:      :+:    :+:   */
+/*   FileContentGetter.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 20:20:52 by tchobert          #+#    #+#             */
-/*   Updated: 2025/05/05 20:20:58 by tchobert         ###   ########.fr       */
+/*   Created: 2025/05/06 14:53:20 by tchobert          #+#    #+#             */
+/*   Updated: 2025/05/06 14:53:38 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "FileContentGetter.hpp"
 
-# include <string>
-# include <iostream>
-# include <cstdlib>
-# include "FileOpener.hpp"
-
-class	FileReplacerUseCase
+void	FileContentGetter::getFileContent(std::ifstream& openedFile, std::string content)
 {
-	public:
+	std::ostringstream ss;
 
-	void	execute(const std::string& filename, const std::string& s1,
-				const std::string& s2);
+	ss << openedFile.rdbuf();
+	content = ss.str();
 };

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FileReplacerUseCase.hpp                            :+:      :+:    :+:   */
+/*   FileOpener.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 20:20:52 by tchobert          #+#    #+#             */
-/*   Updated: 2025/05/05 20:20:58 by tchobert         ###   ########.fr       */
+/*   Created: 2025/05/06 13:48:36 by tchobert          #+#    #+#             */
+/*   Updated: 2025/05/06 13:48:52 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 # include <string>
 # include <iostream>
 # include <cstdlib>
+# include <fstream>
+# include <sstream>
 # include "FileOpener.hpp"
-
-class	FileReplacerUseCase
+# include "FileContentGetter.hpp"
+class FileReader
 {
+	private:
+
+	FileOpener			_fileopener;
+	FileContentGetter	_contentgetter;
+
 	public:
 
-	void	execute(const std::string& filename, const std::string& s1,
-				const std::string& s2);
+	std::string	readFile(const std::string& filename);
 };
