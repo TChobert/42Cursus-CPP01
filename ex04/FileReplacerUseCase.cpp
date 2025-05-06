@@ -11,13 +11,16 @@
 /* ************************************************************************** */
 
 #include "FileReplacerUseCase.hpp"
+#include "FileReader.hpp"
 
 void	FileReplacerUseCase::execute(const std::string& filename,
 			const std::string& s1, const std::string& s2)
 {
-	//FileOpener
+	std::string	fileContent;
+	std::string	replacedContent;
 
-	//ContentReplacer
-
+	FileReader	filereader;
+	fileContent = filereader.readFile(filename);
+	//
 	//FileWriter
 }

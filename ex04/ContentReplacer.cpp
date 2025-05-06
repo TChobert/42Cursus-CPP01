@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FileCloser.hpp                                     :+:      :+:    :+:   */
+/*   ContentReplacer.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 15:53:15 by tchobert          #+#    #+#             */
-/*   Updated: 2025/05/06 15:53:28 by tchobert         ###   ########.fr       */
+/*   Created: 2025/05/06 17:05:10 by tchobert          #+#    #+#             */
+/*   Updated: 2025/05/06 17:05:30 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ContentReplacer.hpp"
 
-# include <cstdlib>
-# include <fstream>
-# include <iostream>
-
-class	FileCloser
+std::string	ContentReplacer::replace(const std::string& content,
+				const std::string& s1, const std::string& s2)
 {
-	public:
+	std::string	newContent;
+	size_t		position;
+	size_t		found;
 
-	static void	closeFile(std::ifstream& openedFile);
-};
+	position = 0;
+	while ((found = content.find(s1, position)) != std::string::npos)
+	{
+		newContent.append(content.substr(position, found - position));
+	}
+	return (newContent);
+}

@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FileCloser.hpp                                     :+:      :+:    :+:   */
+/*   ContentReplacer.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tchobert <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 15:53:15 by tchobert          #+#    #+#             */
-/*   Updated: 2025/05/06 15:53:28 by tchobert         ###   ########.fr       */
+/*   Created: 2025/05/06 17:01:55 by tchobert          #+#    #+#             */
+/*   Updated: 2025/05/06 17:02:07 by tchobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+# include <string>
 # include <cstdlib>
-# include <fstream>
-# include <iostream>
 
-class	FileCloser
+class	ContentReplacer
 {
 	public:
 
-	static void	closeFile(std::ifstream& openedFile);
+	std::string	replace(const std::string& content, const std::string& s1, const std::string& s2);
 };
