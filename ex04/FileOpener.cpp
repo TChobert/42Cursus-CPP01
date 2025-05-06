@@ -14,7 +14,7 @@
 
 void	FileOpener::openFile(std::ifstream& stream, const std::string& filename)
 {
-	stream.open(filename);
+	stream.open(filename.c_str());
 	if (!stream.is_open())
 	{
 		throw (std::runtime_error("Cannot open file:" + filename));

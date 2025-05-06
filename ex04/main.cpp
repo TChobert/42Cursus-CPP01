@@ -14,6 +14,7 @@
 
 int	main(int ac, char **av)
 {
+	FileReplacerUseCase	replacer;
 	try
 	{
 		if (ac != 4)
@@ -21,6 +22,7 @@ int	main(int ac, char **av)
 			std::cerr << "Usage: ./replacer <filename> <s1> <s2>" << std::endl;
 			return (EXIT_FAILURE);
 		}
+		replacer.execute(av[1], av[2], av[3]);
 	}
 	catch (const std::exception& e)
 	{

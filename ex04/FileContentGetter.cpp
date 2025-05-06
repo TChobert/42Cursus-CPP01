@@ -18,4 +18,4 @@ void	FileContentGetter::getFileContent(std::ifstream& openedFile, std::string& c
 
 	ss << openedFile.rdbuf();
 	content = ss.str();
-};
+}

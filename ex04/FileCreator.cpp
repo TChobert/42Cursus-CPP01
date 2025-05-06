@@ -14,7 +14,7 @@
 
 void	FileCreator::createFile(std::ofstream& fileStream, const std::string& oldFilename)
 {
-	const std::string	newFilename = oldFilename + ".replace";
+	std::string	newFilename = oldFilename + ".replace";
 
 	fileStream.open(newFilename.c_str());
 	if (!fileStream.is_open())
