@@ -55,7 +55,7 @@ Harl::ComplainLevels	Harl::getComplainLevel(std::string& level)
 		if (this->levels[i] == level)
 			return ComplainLevels(i);
 	}
-	return (ComplainLevels::UNKNOWN);
+	return (UNKNOWN);
 }
 
 void	Harl::complain(std::string level)
@@ -64,19 +64,19 @@ void	Harl::complain(std::string level)
 
 	switch(complainLevel)
 	{
-		case ComplainLevels::DEBUG:
+		case DEBUG:
 		(this->*complainLevels[0])();
 			break;
-		case ComplainLevels::INFO:
+		case INFO:
 		(this->*complainLevels[1])();
 			break;
-		case ComplainLevels::ERROR:
+		case ERROR:
 		(this->*complainLevels[2])();
 			break;
-		case ComplainLevels::WARNING:
+		case WARNING:
 		(this->*complainLevels[3])();
 			break;
-		case ComplainLevels::UNKNOWN:
+		case UNKNOWN:
 			std::cout << "Harl! You there?" << std::endl;
 			break;
 	}
