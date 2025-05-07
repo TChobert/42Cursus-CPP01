@@ -28,7 +28,9 @@ class	Harl
 	public:
 
 	Harl(void);
+	enum class	ComplainLevels {DEBUG, INFO, WARNING, ERROR, UNKNOWN};
 	std::string	levels[4];
 	void		(Harl::*complainLevels[4])();
 	void		complain(std::string level);
+	ComplainLevels getComplainLevel(std::string& level);
 };
