@@ -8,7 +8,7 @@ RESET =\033[0m
 
 ## TARGET ##
 
-NAME := HarlFilter
+NAME := harlFilter
 
 ## COMPILATION ##
 
