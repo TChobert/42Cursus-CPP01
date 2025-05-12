@@ -16,13 +16,13 @@ Harl::Harl(void)
 {
 	complainLevels[0] = &Harl::debug;
 	complainLevels[1] = &Harl::info;
-	complainLevels[2] = &Harl::error;
-	complainLevels[3] = &Harl::warning;
+	complainLevels[2] = &Harl::warning;
+	complainLevels[3] = &Harl::error;
 
 	levels[0] = "DEBUG";
 	levels[1] = "INFO";
-	levels[2] = "ERROR";
-	levels[3] = "WARNING";
+	levels[2] = "WARNING";
+	levels[3] = "ERROR";
 }
 
 void	Harl::debug(void)
@@ -39,13 +39,13 @@ void	Harl::info(void)
 
 void	Harl::warning(void)
 {
-	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
+	std::cout <<  "I think I deserve to have some extra bacon for free. I’ve been coming for"
+	" years, whereas you started working here just last month." << std::endl;
 }
 
 void	Harl::error(void)
 {
-	std::cout <<  "I think I deserve to have some extra bacon for free. I’ve been coming for"
-	" years, whereas you started working here just last month." << std::endl;
+	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
 Harl::ComplainLevels	Harl::getComplainLevel(std::string& level)
@@ -70,10 +70,10 @@ void	Harl::complain(std::string level)
 		case INFO:
 		(this->*complainLevels[1])();
 			break;
-		case ERROR:
+		case WARNING:
 		(this->*complainLevels[2])();
 			break;
-		case WARNING:
+		case ERROR:
 		(this->*complainLevels[3])();
 			break;
 		case UNKNOWN:
