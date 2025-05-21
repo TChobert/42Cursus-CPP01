@@ -19,7 +19,15 @@ int	main(void)
 	const std::string*	stringPTR = &string;
 	const std::string&	stringREF = string;
 
+	//Adresses
+
 	std::cout << "Memory address of string: " << &string << std::endl;
 	std::cout << "Memory address held by stringPTR: " << stringPTR << std::endl;
 	std::cout << "Memory address held by stringREF: " << &stringREF << std::endl;
+
+	//Value of string
+
+	std::cout << string << std::endl;
+	std::cout << *stringPTR << std::endl;
+	std::cout << stringREF << std::endl;
 }
